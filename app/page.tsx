@@ -147,24 +147,23 @@ export default function Home() {
             <Carousel
               items={(() => {
                 const featuredProjects = projects.filter((p) => p.featured);
-                const firstProject = featuredProjects[0];
                 
-                if (!firstProject) return [];
+                if (featuredProjects.length === 0) return [];
                 
-                return [
+                return featuredProjects.map((project, index) => (
                   <Card
-                    key={firstProject.id}
+                    key={project.id}
                     card={{
-                      src: firstProject.homepageImage || firstProject.image,
-                      title: firstProject.title,
-                      category: firstProject.category,
-                      content: firstProject.description ? <p>{firstProject.description}</p> : null,
-                      id: firstProject.id,
+                      src: project.homepageImage || project.image,
+                      title: project.title,
+                      category: project.category,
+                      content: project.description ? <p>{project.description}</p> : null,
+                      id: project.id,
                     }}
-                    index={0}
+                    index={index}
                     layout={false}
                   />
-                ];
+                ));
               })()}
               initialScroll={0}
             />

@@ -26,6 +26,16 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "mirramatch",
+    title: "MirraMatch",
+    category: "Mobile App",
+    description: "",
+    image: "/images/mirramatch/mirra-match-project.png",
+    homepageImage: "/images/mirramatch/mirra-match-project.png",
+    tags: ["Mobile", "App"],
+    featured: true,
+  },
+  {
     id: "clear-closet-app",
     title: "Clear Closet",
     category: "Product & UX Design",
@@ -75,7 +85,7 @@ export const projects: Project[] = [
       "/images/projects/icyveins/guide-componentspng.png",
       "/images/projects/icyveins/lockpng.png",
     ],
-    featured: true,
+    featured: false,
     keyResults: [
       "Global Audience Scale: Directed all UX and product design initiatives for a platform serving 7 million Monthly Active Users (MAU) across the Blizzard, Square Enix and Holoverse ecosystems.",
       "Expansion of Reach: Engineered the structural architecture for a new News and Editorial ecosystem, enabling the site to expand into new games, which significantly increased organic traffic and brand visibility.",
@@ -175,7 +185,7 @@ export const projects: Project[] = [
       "/images/projects/tabstats-dashboard/tableitemspng.png",
       "/images/projects/tabstats-dashboard/applicationframepng.png",
     ],
-    featured: true,
+    featured: false,
     stats: [
       "Native Product Launch",
       "Real-Time Analytics",

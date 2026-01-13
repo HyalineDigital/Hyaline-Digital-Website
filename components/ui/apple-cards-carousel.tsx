@@ -99,8 +99,8 @@ export const Carousel = ({
     if (!carouselRef.current) return;
 
     const container = carouselRef.current;
-    // Hide arrows if there's only one item
-    if (items.length === 1) {
+    // Hide arrows if there's only one or two items (centered, no scrolling needed)
+    if (items.length === 1 || items.length === 2) {
       setCanScrollLeft(false);
       setCanScrollRight(false);
       return;
@@ -136,6 +136,7 @@ export const Carousel = ({
   }, []);
 
   const isSingleItem = items.length === 1;
+  const isTwoItems = items.length === 2;
 
   return (
     <div className="relative w-full">
@@ -143,7 +144,7 @@ export const Carousel = ({
         ref={carouselRef}
         className={cn(
           "flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth pb-4",
-          isSingleItem && "justify-center"
+          (isSingleItem || isTwoItems) && "justify-center"
         )}
         style={{
           scrollbarWidth: "none",
@@ -157,6 +158,8 @@ export const Carousel = ({
               "flex-shrink-0",
               isSingleItem 
                 ? "w-full max-w-[600px] md:max-w-[700px]" 
+                : isTwoItems
+                ? "w-[85%] md:w-[48%] lg:w-[45%]"
                 : "w-[85%] md:w-[45%] lg:w-[35%]"
             )}
           >
@@ -166,7 +169,7 @@ export const Carousel = ({
       </div>
 
       {/* Navigation Buttons */}
-      {!isSingleItem && canScrollLeft && (
+      {!isSingleItem && !isTwoItems && canScrollLeft && (
         <button
           onClick={() => scroll("left")}
           className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-white/80 backdrop-blur-sm shadow-lg hover:bg-white transition-colors"
@@ -190,7 +193,7 @@ export const Carousel = ({
         </button>
       )}
 
-      {!isSingleItem && canScrollRight && (
+      {!isSingleItem && !isTwoItems && canScrollRight && (
         <button
           onClick={() => scroll("right")}
           className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-white/80 backdrop-blur-sm shadow-lg hover:bg-white transition-colors"

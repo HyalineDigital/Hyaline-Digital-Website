@@ -10,8 +10,8 @@ import { projects } from "@/data/projects";
 import { useState } from "react";
 import ImageLightbox from "@/components/ImageLightbox";
 
-export default function ClearClosetAppPage() {
-  const project = projects.find((p) => p.id === "clear-closet-app") || projects[0];
+export default function MirraMatchPage() {
+  const project = projects.find((p) => p.id === "mirramatch") || projects[0];
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxImages, setLightboxImages] = useState<string[]>([]);
   const [lightboxIndex, setLightboxIndex] = useState(0);
@@ -52,8 +52,8 @@ export default function ClearClosetAppPage() {
               {/* Icon */}
               <div className="flex-shrink-0">
                 <Image
-                  src="/images/clear-closet/clear-closet-icon.png"
-                  alt="Clear Closet Icon"
+                  src="/images/mirramatch/mirra-match-icon.png"
+                  alt="MirraMatch Icon"
                   width={120}
                   height={120}
                   className="rounded-lg"
@@ -74,11 +74,11 @@ export default function ClearClosetAppPage() {
                       delay: 0.2
                     }}
                   >
-                    <span style={{ color: '#121212' }}>Clear Closet</span>
+                    <span style={{ color: '#121212' }}>MirraMatch</span>
                   </motion.h1>
                   {/* Privacy Policy Button */}
                   <Link
-                    href="/work/clear-closet-app/privacy-policy"
+                    href="/work/mirramatch/privacy-policy"
                     className="relative inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full bg-[#FFFFFF]/5 hover:bg-[#FFFFFF]/15 transition-all"
                     style={{ color: '#121212', border: '1px solid #121212' }}
                   >
@@ -108,35 +108,104 @@ export default function ClearClosetAppPage() {
               <div>
                 <h2 className="text-2xl md:text-3xl font-black mb-6" style={{ color: '#121212' }}>Overview</h2>
                 <p className="text-lg md:text-xl font-light leading-relaxed" style={{ color: '#121212' }}>
-                  Clear Closet is a mobile app that digitizes and organizes your wardrobe using AI. Users scan clothing with the built-in camera or select photos from their gallery, and the app automatically identifies categories (jackets, shirts, pants), extracts color palettes, detects fabric textures and patterns, and analyzes style vibes (casual, formal, sporty). The app tracks wear frequency, calculates cost-per-wear, and provides visual indicators for neglected items that fade over time. It includes intelligent style matching, seasonal wardrobe management, weather-integrated outfit planning, and a calendar outfit tracker. Benefits for users include financial awareness through cost-per-wear tracking, wardrobe optimization by identifying unused items, and sustainability by encouraging better use of existing clothes.
+                  Stop searching for the "perfect man"—generate them.
                 </p>
                 <p className="text-lg md:text-xl font-light leading-relaxed mt-4" style={{ color: '#121212' }}>
-                  The app gamifies wardrobe management with login streaks, visual feedback on neglected items, and smart notifications. Users can search and filter by category, color, season, or style, plan outfits based on weather forecasts, and maintain a complete style history. The AI-powered tagging reduces manual entry, and the local-first approach ensures privacy and fast performance. The app helps users make smarter purchasing decisions, maximize wardrobe value, and build better fashion habits through data-driven insights and intuitive visual cues.
+                  MirraMatch is an AI-powered partner generator designed to create photorealistic images that look like they were taken right next to you. We don't just put a face in a photo; we analyze your specific style, lighting, and "vibe" to create a partner that truly complements you.
+                </p>
+                <p className="text-lg md:text-xl font-light leading-relaxed mt-4" style={{ color: '#121212' }}>
+                  Whether you're joining the viral "generate a man next to me" trend or just curious to see your "perfect match" based on your aesthetic, MirraMatch delivers results so realistic they'll have your followers doing a double-take.
                 </p>
               </div>
             </div>
           </ScrollAnimation>
 
-          {/* Clear Closet Images */}
+          {/* How It Works */}
+          <ScrollAnimation direction="up" delay={0.4}>
+            <div className="mb-6">
+              <h2 className="text-2xl md:text-3xl font-black mb-6" style={{ color: '#121212' }}>How It Works</h2>
+              <div className="space-y-4">
+                <div>
+                  <h3 className="text-xl md:text-2xl font-semibold mb-2" style={{ color: '#121212' }}>1. Upload a Selfie</h3>
+                  <p className="text-lg md:text-xl font-light leading-relaxed" style={{ color: '#121212' }}>
+                    Snap a photo or pick one from your library.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl md:text-2xl font-semibold mb-2" style={{ color: '#121212' }}>2. AI Analysis</h3>
+                  <p className="text-lg md:text-xl font-light leading-relaxed" style={{ color: '#121212' }}>
+                    Our engine scans your style markers—like fashion subculture, tattoos, piercings, and lighting.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl md:text-2xl font-semibold mb-2" style={{ color: '#121212' }}>3. Meet Your Match</h3>
+                  <p className="text-lg md:text-xl font-light leading-relaxed" style={{ color: '#121212' }}>
+                    Watch as the AI generates a photorealistic partner who fits your world seamlessly.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </ScrollAnimation>
+
+          {/* Key Features */}
+          <ScrollAnimation direction="up" delay={0.5}>
+            <div className="mb-6">
+              <h2 className="text-2xl md:text-3xl font-black mb-6" style={{ color: '#121212' }}>Key Features</h2>
+              <div className="space-y-4">
+                <div>
+                  <h3 className="text-xl md:text-2xl font-semibold mb-2" style={{ color: '#121212' }}>Photorealistic Accuracy</h3>
+                  <p className="text-lg md:text-xl font-light leading-relaxed" style={{ color: '#121212' }}>
+                    No "uncanny valley" here. Our engine ensures lighting, shadows, and all aspects match your original photo perfectly.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl md:text-2xl font-semibold mb-2" style={{ color: '#121212' }}>Customizable Vibes (Premium)</h3>
+                  <p className="text-lg md:text-xl font-light leading-relaxed" style={{ color: '#121212' }}>
+                    Tailor your match's age, build, ethnicity, and style.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl md:text-2xl font-semibold mb-2" style={{ color: '#121212' }}>Deep Backstories (Premium)</h3>
+                  <p className="text-lg md:text-xl font-light leading-relaxed" style={{ color: '#121212' }}>
+                    Every match comes with a unique, AI-generated personality, backstory, and a zodiac sign.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl md:text-2xl font-semibold mb-2" style={{ color: '#121212' }}>Style-Sync Technology</h3>
+                  <p className="text-lg md:text-xl font-light leading-relaxed" style={{ color: '#121212' }}>
+                    Our AI recognizes your aesthetic and generates a partner with matching style markers (like tattoos or specific fashion subcultures).
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl md:text-2xl font-semibold mb-2" style={{ color: '#121212' }}>Seamless Sharing</h3>
+                  <p className="text-lg md:text-xl font-light leading-relaxed" style={{ color: '#121212' }}>
+                    Save your favorites to your personal gallery and share them instantly to TikTok, Instagram, or Snapchat.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </ScrollAnimation>
+
+          {/* MirraMatch Images */}
           <div className="mb-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
               {[
-                "/images/clear-closet/AI-Powered Style Matching.png",
-                "/images/clear-closet/Calendar Outfit Planner.png",
-                "/images/clear-closet/Master Your Cost-Per-Wear.png",
-                "/images/clear-closet/Your Entire Closet, Digitized.png",
+                "/images/mirramatch/Identify Your Vibe.jpg",
+                "/images/mirramatch/Discover Your Perfect Match.jpg",
+                "/images/mirramatch/Customize Your Match.jpg",
+                "/images/mirramatch/Explore His Backstory.jpg",
               ].map((image, index) => {
                 const allImages = [
-                  "/images/clear-closet/AI-Powered Style Matching.png",
-                  "/images/clear-closet/Calendar Outfit Planner.png",
-                  "/images/clear-closet/Master Your Cost-Per-Wear.png",
-                  "/images/clear-closet/Your Entire Closet, Digitized.png",
+                  "/images/mirramatch/Identify Your Vibe.jpg",
+                  "/images/mirramatch/Discover Your Perfect Match.jpg",
+                  "/images/mirramatch/Customize Your Match.jpg",
+                  "/images/mirramatch/Explore His Backstory.jpg",
                 ];
                 return (
                   <ScrollAnimation
                     key={index}
                     direction="up"
-                    delay={0.4 + index * 0.1}
+                    delay={0.6 + index * 0.1}
                   >
                     <div 
                       className="relative w-full rounded-2xl overflow-hidden cursor-pointer hover:opacity-90 transition-opacity"
@@ -145,7 +214,7 @@ export default function ClearClosetAppPage() {
                     >
                       <Image
                         src={image}
-                        alt={`Clear Closet - Image ${index + 1}`}
+                        alt={`MirraMatch - Image ${index + 1}`}
                         fill
                         className="object-contain"
                       />
